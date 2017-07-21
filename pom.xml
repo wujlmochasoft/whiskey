@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>whiskey</name>
-    <url>http://www.wujl.me</url>
+    <url>http://wujl.me</url>
 
     <!--模块-->
     <modules>
@@ -18,6 +18,7 @@
         <module>whiskey-olap-kylin</module>
         <module>whiskey-olap-mondrian</module>
         <module>whiskey-sql-parser</module>
+        <module>whiskey-data-jpa</module>
     </modules>
 
     <!--Nexus构件下载地址-->
@@ -59,7 +60,7 @@
         <!--base-->
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.12</junit.version>
 
         <!--plugin-->
         <compiler.plugin.version>3.1</compiler.plugin.version>
@@ -76,11 +77,15 @@
         <!--Spring-->
         <spring.version>4.3.3.RELEASE</spring.version>
         <!--Spring-data-->
-
+        <spring-data-jpa.version>1.7.1.RELEASE</spring-data-jpa.version>
         <!--mybatis-->
         <mybatis.version>3.4.1</mybatis.version>
         <spring-data-mybatis.version>1.2.2</spring-data-mybatis.version>
 
+        <!--druid-->
+        <druid.version>1.0.18</druid.version>
+        <!--hibernate-->
+        <hibernate.version>5.2.10.Final</hibernate.version>
         <!--apache-commons-->
         <httpclient.version>4.5.2</httpclient.version>
         <!--olap-->
@@ -94,6 +99,9 @@
         <postgres-connector-java.version>9.4.1210.jre7</postgres-connector-java.version>
         <sqlserver-connector-java.version>4.0</sqlserver-connector-java.version>
         <db2-connector-java.version>10.1</db2-connector-java.version>
+
+        <!--guava-->
+        <guava.version>18.0</guava.version>
 
     </properties>
 
@@ -226,6 +234,12 @@
             <artifactId>mybatis-spring</artifactId>
             <version>${spring-data-mybatis.version}</version>
         </dependency>
+        <!--hibernate-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
 
         <!--apache-commons相关-->
         <dependency>
@@ -242,6 +256,29 @@
             <type>pom</type>
             <scope>import</scope>
         </dependency>
-     </dependencies>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring-data-jpa.version}</version>
+        </dependency>
+
+        <!--druid-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+
+
+        <!--google-guava-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+    </dependencies>
+
 </dependencyManagement>
 </project>
