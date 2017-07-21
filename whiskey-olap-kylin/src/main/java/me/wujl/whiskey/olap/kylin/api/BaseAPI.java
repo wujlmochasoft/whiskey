@@ -17,7 +17,8 @@ import org.apache.http.message.BasicHeader;
 
 public abstract class BaseAPI {
 
-    protected static final String BASE_URL = "http://10.0.8.4:7070/kylin/api" ;
+    protected static final String BASE_URL = "" ;
+//    protected static final String BASE_URL = "http://10.0.8.4:7070/kylin/api" ;
     protected static Header jsonHeader = new BasicHeader(HttpHeaders.CONTENT_TYPE, ContentType.APPLICATION_JSON.toString());
     protected static Header xmlHeader = new BasicHeader(HttpHeaders.CONTENT_TYPE, ContentType.APPLICATION_XML.toString());
 
